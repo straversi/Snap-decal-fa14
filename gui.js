@@ -96,7 +96,7 @@ IDE_Morph.uber = Morph.prototype;
 
 IDE_Morph.prototype.setDefaultDesign = function () {
     MorphicPreferences.isFlat = false;
-    SpriteMorph.prototype.paletteColor = new Color(55, 55, 55);
+    SpriteMorph.prototype.paletteColor = new Color(25, 25, 25);
     SpriteMorph.prototype.paletteTextColor = new Color(230, 230, 230);
     StageMorph.prototype.paletteTextColor
         = SpriteMorph.prototype.paletteTextColor;
@@ -105,7 +105,7 @@ IDE_Morph.prototype.setDefaultDesign = function () {
         = SpriteMorph.prototype.paletteColor.lighter(30);
 
     IDE_Morph.prototype.buttonContrast = 30;
-    IDE_Morph.prototype.backgroundColor = new Color(40, 40, 40);
+    IDE_Morph.prototype.backgroundColor = new Color(20, 20, 20);
     IDE_Morph.prototype.frameColor = SpriteMorph.prototype.paletteColor;
 
     IDE_Morph.prototype.groupColor
