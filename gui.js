@@ -97,7 +97,7 @@ IDE_Morph.uber = Morph.prototype;
 IDE_Morph.prototype.setDefaultDesign = function () {
     MorphicPreferences.isFlat = false;
     SpriteMorph.prototype.paletteColor = new Color(25, 25, 25);
-    SpriteMorph.prototype.paletteTextColor = new Color(230, 230, 230);
+    SpriteMorph.prototype.paletteTextColor = new Color(200, 200, 200);
     StageMorph.prototype.paletteTextColor
         = SpriteMorph.prototype.paletteTextColor;
     StageMorph.prototype.paletteColor = SpriteMorph.prototype.paletteColor;
@@ -142,7 +142,7 @@ IDE_Morph.prototype.setFlatDesign = function () {
     SpriteMorph.prototype.sliderColor = SpriteMorph.prototype.paletteColor;
 
     IDE_Morph.prototype.buttonContrast = 30;
-    IDE_Morph.prototype.backgroundColor = new Color(200, 200, 200);
+    IDE_Morph.prototype.backgroundColor = new Color(0, 0, 0);
     IDE_Morph.prototype.frameColor = new Color(255, 255, 255);
 
     IDE_Morph.prototype.groupColor = new Color(230, 230, 230);
@@ -159,7 +159,7 @@ IDE_Morph.prototype.setFlatDesign = function () {
         IDE_Morph.prototype.groupColor.darker(30)
     ];
     IDE_Morph.prototype.appModeColor = IDE_Morph.prototype.frameColor;
-    IDE_Morph.prototype.scriptsPaneTexture = null;
+    IDE_Morph.prototype.scriptsPaneTexture = 'scriptsPaneTexture.gif';
     IDE_Morph.prototype.padding = 1;
 
     SpriteIconMorph.prototype.labelColor
@@ -182,7 +182,7 @@ function IDE_Morph(isAutoFill) {
 
 IDE_Morph.prototype.init = function (isAutoFill) {
     // global font setting
-    MorphicPreferences.globalFontFamily = 'Helvetica, Arial';
+    MorphicPreferences.globalFontFamily = 'Gill Sans, Arial';
 
     // restore saved user preferences
     this.userLanguage = null; // user language preference for startup
@@ -1239,7 +1239,7 @@ IDE_Morph.prototype.createCorralBar = function () {
     newbutton.labelColor = this.buttonLabelColor;
     newbutton.contrast = this.buttonContrast;
     newbutton.drawNew();
-    newbutton.hint = "add a new Turtle sprite";
+    newbutton.hint = "add a new Turtle Rachel";
     newbutton.fixLayout();
     newbutton.setCenter(this.corralBar.center());
     newbutton.setLeft(this.corralBar.left() + padding);
@@ -1261,7 +1261,7 @@ IDE_Morph.prototype.createCorralBar = function () {
     paintbutton.labelColor = this.buttonLabelColor;
     paintbutton.contrast = this.buttonContrast;
     paintbutton.drawNew();
-    paintbutton.hint = "paint a new sprite";
+    paintbutton.hint = "paint a new Rachel";
     paintbutton.fixLayout();
     paintbutton.setCenter(this.corralBar.center());
     paintbutton.setLeft(

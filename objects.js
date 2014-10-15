@@ -180,7 +180,7 @@ SpriteMorph.prototype.blockColor = {
     other: new Color(255-150, 255-150, 255-150)
 };
 
-SpriteMorph.prototype.paletteColor = new Color(55, 55, 55);
+SpriteMorph.prototype.paletteColor = new Color(20, 20, 20);
 SpriteMorph.prototype.paletteTextColor = new Color(230, 230, 230);
 SpriteMorph.prototype.sliderColor
     = SpriteMorph.prototype.paletteColor.lighter(30);
@@ -188,7 +188,7 @@ SpriteMorph.prototype.isCachingPrimitives = true;
 
 SpriteMorph.prototype.enableNesting = true;
 SpriteMorph.prototype.useFlatLineEnds = false;
-SpriteMorph.prototype.highlightColor = new Color(250, 200, 130);
+SpriteMorph.prototype.highlightColor = new Color(250, 0, 0);
 SpriteMorph.prototype.highlightBorder = 8;
 
 SpriteMorph.prototype.bubbleColor = new Color(255, 255, 255);
@@ -207,28 +207,28 @@ SpriteMorph.prototype.initBlocks = function () {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'move %n steps',
-            defaults: [10]
+            spec: 'move %n Rachels',
+            defaults: ["Rachel"]
         },
         turn: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'turn %clockwise %n degrees',
-            defaults: [15]
+            spec: 'Turn %clockwise %n Rachels',
+            defaults: ["Rachel"]
         },
         turnLeft: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'turn %counterclockwise %n degrees',
-            defaults: [15]
+            spec: 'Turn %counterclockwise %n Rachels',
+            defaults: ["Huang"]
         },
         setHeading: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'point in direction %dir'
+            spec: 'Point towards %dir'
         },
         doFaceTowards: {
             only: SpriteMorph,
@@ -240,8 +240,8 @@ SpriteMorph.prototype.initBlocks = function () {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'go to x: %n y: %n',
-            defaults: [0, 0]
+            spec: 'go to Rachel: %n Huang: %n',
+            defaults: ["Rachel", "Huang"]
         },
         doGotoObject: {
             only: SpriteMorph,
@@ -253,54 +253,54 @@ SpriteMorph.prototype.initBlocks = function () {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'glide %n secs to x: %n y: %n',
-            defaults: [1, 0, 0]
+            spec: 'glide %n Rachels to Rachel: %n Huang: %n',
+            defaults: ["Rachel", "Rachel", "Rachel"]
         },
         changeXPosition: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'change x by %n',
+            spec: 'change Rachel position by %n',
             defaults: [10]
         },
         setXPosition: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'set x to %n',
+            spec: 'set Rachel position to %n',
             defaults: [0]
         },
         changeYPosition: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'change y by %n',
+            spec: 'change Huang by %n',
             defaults: [10]
         },
         setYPosition: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'set y to %n',
+            spec: 'set Huang to %n',
             defaults: [0]
         },
         bounceOffEdge: {
             only: SpriteMorph,
             type: 'command',
             category: 'motion',
-            spec: 'if on edge, bounce'
+            spec: 'if on edge, Rachel'
         },
         xPosition: {
             only: SpriteMorph,
             type: 'reporter',
             category: 'motion',
-            spec: 'x position'
+            spec: 'Rachel position'
         },
         yPosition: {
             only: SpriteMorph,
             type: 'reporter',
             category: 'motion',
-            spec: 'y position'
+            spec: 'Huang position'
         },
         direction: {
             only: SpriteMorph,
@@ -1978,12 +1978,12 @@ SpriteMorph.prototype.blockTemplates = function (category) {
                     },
                     myself
                 ).prompt(
-                    'Variable name',
+                    'RachelVar name',
                     null,
                     myself.world()
                 );
             },
-            'Make a variable'
+            'Make a RachelVar'
         );
         button.userMenu = helpMenu;
         button.selector = 'addVariable';
@@ -2004,7 +2004,7 @@ SpriteMorph.prototype.blockTemplates = function (category) {
                     });
                     menu.popUpAtHand(myself.world());
                 },
-                'Delete a variable'
+                'Delete a RachelVar'
             );
             button.userMenu = helpMenu;
             button.selector = 'deleteVariable';
@@ -2093,12 +2093,12 @@ SpriteMorph.prototype.blockTemplates = function (category) {
                     },
                     myself
                 ).prompt(
-                    'Make a block',
+                    'Make a Rachel',
                     null,
                     myself.world()
                 );
             },
-            'Make a block'
+            'Make a Rachel'
         );
         button.userMenu = helpMenu;
         button.selector = 'addCustomBlock';
