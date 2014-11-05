@@ -1,3 +1,20 @@
+  //////////////////////\
+ /// WATERMARK-GATE ///\\\
+//////////////////////\\\\\
+
+This branch is not a crook.
+
+Cheating scandals suck. It would be helpful if there existed a watermark  attached to the XML of Snap! project files that kept track of various attributes about the history of a given file. These may include:
+
+- Date and time created
+- List of authors
+- Whether the project is a remix or not
+
+Furthermore, to thwart pesky XML modifiers, it would be neat to implement a check that will refuse to open a Snap! file if the list of authors or timestamps is modified.
+
+Have a nice day!
+
+==========================================================================
 
 Snap! Build Your Own Blocks
 
