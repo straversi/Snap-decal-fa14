@@ -341,6 +341,7 @@ SnapSerializer.prototype.loadProjectModel = function (xmlNode) {
         }
         project.name = 'Untitled ' + nameID;
     }
+    project.date = model.project.attributes.date;
     model.notes = model.project.childNamed('notes');
     if (model.notes) {
         project.notes = model.notes.contents;
@@ -1293,6 +1294,7 @@ SnapSerializer.prototype.openProject = function (project, ide) {
     }
     ide.projectName = project.name;
     ide.projectNotes = project.notes || '';
+    console.log(project.date);
     if (ide.globalVariables) {
         ide.globalVariables = project.globalVariables;
     }
@@ -1370,9 +1372,10 @@ StageMorph.prototype.toXML = function (serializer) {
         return str;
     }
 
+    var d = Date.now();
     this.removeAllClones();
     return serializer.format(
-        '<project name="@" app="@" version="@">' +
+        '<project name="@" app="@" version="@" date="@">' +
             '<notes>$</notes>' +
             '<thumbnail>$</thumbnail>' +
             '<stage name="@" width="@" height="@" ' +
@@ -1396,6 +1399,7 @@ StageMorph.prototype.toXML = function (serializer) {
         (ide && ide.projectName) ? ide.projectName : 'Untitled',
         serializer.app,
         serializer.version,
+        d,
         (ide && ide.projectNotes) ? ide.projectNotes : '',
         thumbdata,
         this.name,
