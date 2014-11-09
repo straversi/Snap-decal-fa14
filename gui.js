@@ -200,6 +200,7 @@ IDE_Morph.prototype.init = function (isAutoFill) {
     this.currentTab = 'scripts';
     this.projectName = '';
     this.projectNotes = '';
+    this.projectDate = '';
 
     this.logo = null;
     this.controlBar = null;
@@ -2721,6 +2722,7 @@ IDE_Morph.prototype.newProject = function () {
     StageMorph.prototype.enableCodeMapping = false;
     SpriteMorph.prototype.useFlatLineEnds = false;
     this.setProjectName('');
+    this.projectDate = '';
     this.projectNotes = '';
     this.createStage();
     this.add(this.stage);
