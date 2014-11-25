@@ -344,6 +344,10 @@ SnapSerializer.prototype.loadProjectModel = function (xmlNode) {
     project.date = model.project.attributes.dates;
     model.notes = model.project.childNamed('notes');
     if (model.notes) {
+        if (parseInt(model.notes.attributes.fdate) + 1234567 != 
+            parseInt(project.date.split(' ')[0])) {
+            throw 'CAUGHT RED HANDED';
+        }
         project.notes = model.notes.contents;
     }
     model.globalVariables = model.project.childNamed('variables');
@@ -1375,7 +1379,7 @@ StageMorph.prototype.toXML = function (serializer) {
     this.removeAllClones();
     return serializer.format(
         '<project name="@" app="@" version="@" dates="@">' +
-            '<notes>$</notes>' +
+            '<notes fdate="@">$</notes>' +
             '<thumbnail>$</thumbnail>' +
             '<stage name="@" width="@" height="@" ' +
             'costume="@" tempo="@" threadsafe="@" ' +
@@ -1399,6 +1403,7 @@ StageMorph.prototype.toXML = function (serializer) {
         serializer.app,
         serializer.version,
         (ide && ide.exportDates) ? ide.exportDates.concat(" ").concat(Date.now()) : Date.now(),
+        (ide && ide.exportDates) ? ide.exportDates.split(' ')[0] - 1234567 : Date.now() - 1234567,
         (ide && ide.projectNotes) ? ide.projectNotes : '',
         thumbdata,
         this.name,
