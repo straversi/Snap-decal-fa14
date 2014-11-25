@@ -342,11 +342,12 @@ SnapSerializer.prototype.loadProjectModel = function (xmlNode) {
         project.name = 'Untitled ' + nameID;
     }
     project.date = model.project.attributes.dates;
+    project.owner = model.project.attributes.owner;
     model.notes = model.project.childNamed('notes');
     if (model.notes) {
         if (parseInt(model.notes.attributes.fdate) + 1234567 != 
             parseInt(project.date.split(' ')[0])) {
-            throw 'CAUGHT RED HANDED';
+            throw 'CAUGHT RED HANDED, YOU ARE A CROOK!';
         }
         project.notes = model.notes.contents;
     }
@@ -1298,6 +1299,7 @@ SnapSerializer.prototype.openProject = function (project, ide) {
     }
     ide.projectName = project.name;
     ide.exportDates = project.date;
+    ide.owner = project.owner;
     ide.projectNotes = project.notes || '';
     if (ide.globalVariables) {
         ide.globalVariables = project.globalVariables;
